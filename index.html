@@ -1,0 +1,130 @@
+<!--  Cash Pushcharts  -->
+<!-- July 2022  -->
+<!-- Creator: Mathias aka MacLucky macus.krakow@gmail.com -->
+<!-- Credits: Herq aka Herq77 image processing -->
+<!-- Credits: pokercoaching.com Preflop Charts by J.Little -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MPT Cash</title>
+
+  <!-- JSpushchart -->
+  <script src="JSpushcart_view.js"></script>
+  <script src="JSpushcart_nav.js"></script>
+  <style type="text/css">
+  /* The pushchart will work on local machine onlny if CSS is declared inline, due to browser local access rules for local files. */
+
+  :root {
+  --JL_border: #c5c5c5;
+  --JL_color_selected: #ffffff;
+  --JL_background_selected: #ff5c5c;
+  --JL_background_superselected: #e00000;
+  --JL_outline: 2px dotted #c5c5c5;
+  }
+
+  
+  .JLpushchart {
+      margin-right: .1em; 
+      margin-bottom: .1em;
+      padding: .4em 1em;
+      display: inline-block;
+      cursor: pointer;
+      vertical-align: middle;
+      text-align: center;    
+      border: 1px solid var(--JL_border);
+      border-radius: 3px;        
+      outline: none; 
+
+  }
+  
+  .JLpushchart:hover {
+      outline: var(--JL_outline);  
+  }
+
+  .JLpushchart_unselcted {
+      background: #f6f6f6;
+  }
+
+  .JLpushchart_unselcted:hover {
+      background: var(--JL_border)
+  }  
+  
+
+  .JLpushchart_selected {
+      color: var(--JL_color_selected);
+      background: var(--JL_background_selected);    
+  }
+
+  .JLpushchart_selected:hover, 
+  .JLpushchart_superselected:hover {
+      outline: var(--JL_outline);
+  }  
+  
+  .JLpushchart_superselected {
+      color: var(--JL_color_selected);
+      background: var(--JL_background_superselected);
+  }
+
+  #JLpushchart_stacks, 
+  #JLpushchart_positions, 
+  #JLpushchart_output {
+      display: block;
+      margin-top: 0.67em;
+      margin-bottom: 0.67em;
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+  .JLpushchart_responsive {
+      width: 100%;
+      max-width: 430px;
+      height: auto;
+  }
+
+ #JLpushchart_footer {
+      color: var(--JL_color_selected);  
+      border: var(--JL_background_superselected) solid 2px;
+      background: var(--JL_background_superselected);
+      font-family: serif;
+      color: white;
+      font-style: italic;
+      padding-left: 1em;
+   }
+ 
+  #JLpushchart_footer > span {
+      float:right;
+  }
+ 
+   #JLpushchart_footer > span > a {
+      color: var(--JL_color_selected);
+  }
+
+
+
+  </style>
+</head>
+
+<body>
+    
+ 
+  <nav id="JLpushchart_positions">
+    <button id="JLpushchart_lj" class="JLpushchart JLpushchart_superselected">LJ</button>
+    <button id="JLpushchart_hj" class="JLpushchart JLpushchart_unselcted">HJ</button>
+    <button id="JLpushchart_co" class="JLpushchart JLpushchart_unselcted">CO</button>
+    <button id="JLpushchart_btn" class="JLpushchart JLpushchart_selected">BTN</button>
+    <button id="JLpushchart_sb" class="JLpushchart JLpushchart_unselcted">SB</button>
+    <button id="JLpushchart_bb" class="JLpushchart JLpushchart_unselcted">BB</button>
+  </nav>
+
+  <div id="JLpushchart_output">
+    javascript is not enabled
+  </div>
+  <footer id="JLpushchart_footer">
+    6-handed cashgame. RFI: 2.5bb, SB: 3bb. 3-bet IP: 8.5bb, OOP: 10bb<span>From M. Acevedo's <a href="https://www.amazon.com/Modern-Poker-Theory-unbeatable-principles/dp/1909457892" target="_blank">Modern Poker Theory</a></span>
+  </footer>
+</body>
+
+</html>
